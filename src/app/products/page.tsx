@@ -1,3 +1,3 @@
 export default function ProductsPage() {
-  return <main className="p-8">Products</main>;
+  return <div className="p-6 lg:p-10">Products</div>;
 }
