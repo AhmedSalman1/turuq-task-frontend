@@ -8,7 +8,8 @@ import Sidebar from './Sidebar';
 /** Maps a route to the human-readable name shown in the header. */
 function titleForPath(pathname: string): string {
   if (pathname === '/') return 'Overview';
-  if (pathname.startsWith('/products')) return 'Products';
+  if (pathname === '/products') return 'Products';
+  if (pathname.startsWith('/products/')) return 'Product details';
   return 'Overview';
 }
 

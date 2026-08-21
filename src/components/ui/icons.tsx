@@ -146,3 +146,19 @@ export function MoonIcon({ size = 20, ...props }: IconProps) {
     </svg>
   );
 }
+
+export function ChevronLeftIcon({ size = 20, ...props }: IconProps) {
+  return (
+    <svg {...ICON_DEFAULTS} width={size} height={size} {...props}>
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  );
+}
+
+export function ChevronRightIcon({ size = 20, ...props }: IconProps) {
+  return (
+    <svg {...ICON_DEFAULTS} width={size} height={size} {...props}>
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}

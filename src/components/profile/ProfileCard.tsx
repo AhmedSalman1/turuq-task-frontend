@@ -1,10 +1,5 @@
 import type { ReactNode } from 'react';
-
-/**
- * Deterministic bar widths (px) so the barcode strip never shifts
- * between server and client renders.
- */
-const BARCODE_BARS = [3, 1, 2, 4, 1, 1, 3, 2, 1, 4, 2, 1, 1, 3, 4, 1, 2, 1, 3, 1, 1, 2, 4, 2, 1, 3];
+import Barcode from '@/components/ui/Barcode';
 
 interface ProfileCardProps {
   label: string;
@@ -41,11 +36,7 @@ export default function ProfileCard({ label, value, detail, code, icon, index }:
       {detail && <p className="mt-1 text-sm text-foreground/60">{detail}</p>}
 
       {/* Barcode strip — the card's warehouse-tag signature */}
-      <div className="mt-6 flex h-8 w-full items-end justify-between opacity-40 transition-opacity duration-300 group-hover:opacity-80" aria-hidden="true">
-        {BARCODE_BARS.map((width, i) => (
-          <span key={i} className="h-full shrink-0 rounded-[1px] bg-foreground/30" style={{ width }} />
-        ))}
-      </div>
+      <Barcode className="mt-6 opacity-40 transition-opacity duration-300 group-hover:opacity-80" />
     </article>
   );
 }
