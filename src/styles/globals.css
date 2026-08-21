@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Turuq-inspired palette:
+ * primary — deep navy (#032486) scaled for UI surfaces
+ * accent  — baby blue (#01bdfa), the brand's signature highlight
+ * Surfaces adapt between light and dark themes via the `.dark` class.
+ */
+:root {
+  --color-primary-50: #eef4fe;
+  --color-primary-100: #d9e7fd;
+  --color-primary-200: #bcd4fb;
+  --color-primary-300: #8eb8f8;
+  --color-primary-400: #5b92f3;
+  --color-primary-500: #3b6aed;
+  --color-primary-600: #254be1;
+  --color-primary-700: #1d39ce;
+  --color-primary-800: #0a2ba7;
+  --color-primary-900: #032486;
+  --color-primary-950: #01091a;
+
+  --color-accent-50: #ecfaff;
+  --color-accent-100: #d4f3ff;
+  --color-accent-200: #b1ecff;
+  --color-accent-300: #7ce1ff;
+  --color-accent-400: #3ecdfd;
+  --color-accent-500: #01bdfa;
+  --color-accent-600: #00a0d6;
+  --color-accent-700: #007fab;
+  --color-accent-800: #06698d;
+  --color-accent-900: #0c5674;
+  --color-accent-950: #00384e;
+
+  --background: #f4f8fd;
+  --foreground: #0f172a;
+  --surface: #ffffff;
+  --border: #dbe7f5;
+}
+
+.dark {
+  --background: #01091a;
+  --foreground: #e2e8f0;
+  --surface: #0a1a33;
+  --border: #14304f;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid var(--color-primary-900);
+    border-right-color: var(--color-accent-500);
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent-200);
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
